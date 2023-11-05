@@ -98,12 +98,18 @@ public class HotelManagementServiceImpl implements HotelManagementService {
 		}
 	}
 
+	/**
+	 * Retrieves a room inventory with room type and availability
+	 */
 	@Override
 	public List<RoomInventory> getInventoryByRoomTypeAndAvailability(@Valid RoomType type,
 			@Valid boolean availability) {
 		return inventoryRepository.findByRoomTypeAndAvailability(type, availability);
 	}
 
+	/**
+	 * Updates a room inventory
+	 */
 	@Override
 	public void updateInventory(@Valid long id, @Valid RoomDto room, String type) {
 		Optional<RoomInventory> inventoryFound = inventoryRepository.findById(id);

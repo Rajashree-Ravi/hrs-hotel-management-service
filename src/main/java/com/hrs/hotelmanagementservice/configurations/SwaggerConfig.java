@@ -22,13 +22,13 @@ public class SwaggerConfig {
 	@Bean
 	public Docket api() {
 		return new Docket(DocumentationType.SWAGGER_2).select()
-				.apis(RequestHandlerSelectors.basePackage("com.hrs.paymentservice")).paths(PathSelectors.any()).build()
+				.apis(RequestHandlerSelectors.basePackage("com.hrs.hotelmanagementservice")).paths(PathSelectors.any()).build()
 				.apiInfo(apiInfoMetaData());
 	}
 
 	private ApiInfo apiInfoMetaData() {
-		return new ApiInfoBuilder().title("Payment Service API Documentation").description(
-				"Payment service API to handle payment transactions and related operations in hotel reservation system")
+		return new ApiInfoBuilder().title("Hotel Mangement Service API Documentation").description(
+				"Hotel Mangement Service API to manage room inventories and hotel related operations in hotel reservation system")
 				.contact(new Contact("Rajashree Ravi", "", "rajashreeravi09@gmail.com")).license("Apache 2.0")
 				.licenseUrl("http://www.apache.org/licenses/LICENSE-2.0.html").version("1.0.0").build();
 	}
