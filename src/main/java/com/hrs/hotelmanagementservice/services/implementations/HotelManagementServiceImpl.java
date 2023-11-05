@@ -10,6 +10,7 @@ import org.modelmapper.ModelMapper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import com.hrs.hotelmanagementservice.entities.Room;
 import com.hrs.hotelmanagementservice.entities.RoomInventory;
@@ -21,6 +22,7 @@ import com.hrs.hotelmanagementservice.repositories.RoomInventoryRepository;
 import com.hrs.hotelmanagementservice.repositories.RoomRepository;
 import com.hrs.hotelmanagementservice.services.HotelManagementService;
 
+@Service
 public class HotelManagementServiceImpl implements HotelManagementService {
 
 	private static final Logger log = LoggerFactory.getLogger(HotelManagementServiceImpl.class);

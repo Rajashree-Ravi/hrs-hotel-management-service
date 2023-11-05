@@ -11,7 +11,7 @@ import org.springframework.stereotype.Service;
 import com.hrs.hotelmanagementservice.entities.RoomInventory;
 import com.hrs.hotelmanagementservice.exceptions.InventoryNotFoundException;
 import com.hrs.hotelmanagementservice.models.ReservationDto;
-import com.hrs.hotelmanagementservice.models.ReservationInfo;
+import com.hrs.hotelmanagementservice.models.ReservationInfoDto;
 import com.hrs.hotelmanagementservice.models.RoomDto;
 import com.hrs.hotelmanagementservice.services.HotelManagementService;
 
@@ -41,7 +41,7 @@ public class TopicListener {
 		log.info("Reservation : {}", payload.value());
 
 		ReservationDto reservation = payload.value();
-		ReservationInfo reservationInfo = reservation.getReservationInfo();
+		ReservationInfoDto reservationInfo = reservation.getReservationInfoDto();
 
 		List<RoomInventory> inventories = hotelManagementService
 				.getInventoryByRoomTypeAndAvailability(reservationInfo.getRoomType(), true);

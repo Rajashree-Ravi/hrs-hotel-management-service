@@ -1,0 +1,53 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.6.xsd">
+    <changeSet author="Rajashree Ravi (generated)" id="1699167899185-1">
+        <createTable tableName="INVENTORY">
+            <column autoIncrement="true" name="ID" type="BIGINT">
+                <constraints primaryKey="true" primaryKeyName="CONSTRAINT_2"/>
+            </column>
+            <column name="AVAILABILITY" type="BOOLEAN">
+                <constraints nullable="false"/>
+            </column>
+            <column name="AVAILABLE_ROOMS" type="INT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="ROOM_OCCUPANCY" type="INT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="ROOM_TYPE" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="TOTAL_NUMBER_OF_ROOMS" type="INT">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="Rajashree Ravi (generated)" id="1699167899185-2">
+        <createTable tableName="ROOM">
+            <column autoIncrement="true" name="ID" type="BIGINT">
+                <constraints primaryKey="true" primaryKeyName="CONSTRAINT_26"/>
+            </column>
+            <column name="CUSTOMER_ID" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="INVENTORY_ID" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="NUMBER_OF_ADULTS" type="INT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="NUMBER_OF_CHILDREN" type="INT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="NUMBER_OF_ROOMS" type="INT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="OCCUPANCY_END_DATE" type="date">
+                <constraints nullable="false"/>
+            </column>
+            <column name="OCCUPANCY_START_DATE" type="date">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+</databaseChangeLog>

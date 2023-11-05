@@ -1,7 +1,6 @@
 package com.hrs.hotelmanagementservice.models;
 
 import java.math.BigDecimal;
-import java.time.LocalDate;
 
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
@@ -15,9 +14,13 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class ReservationInfo {
+public class ReservationInfoDto {
+	
+	@ApiModelProperty(notes = "Unique identifier of the Reservation Info.", example = "1")
+	private Long id;
 
 	@ApiModelProperty(notes = "Type of room.", example = "DELUXE_ROOM", required = true)
+	@Enumerated(EnumType.STRING)
 	@NotNull(message = "Invalid roomType: Room type may not be null.")
 	private RoomType roomType;
 	

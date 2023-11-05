@@ -46,6 +46,6 @@ public class ReservationDto {
 
 	@ApiModelProperty(notes = "Details for the reservation.", required = true)
 	@NotNull(message = "Invalid reservationInfo: Reservation details may not be null.")
-	private ReservationInfo reservationInfo;
+	private ReservationInfoDto reservationInfoDto;
 
 }

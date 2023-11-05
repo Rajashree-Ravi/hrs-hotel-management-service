@@ -1,0 +1,20 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd
+																																																			 http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.6.xsd">
+	<changeSet author="Rajashree Ravi" id="seed-inventory-table">
+		<insert tableName="inventory">
+			<column name="total_number_of_rooms" value="10"></column>
+			<column name="available_rooms" value="9"></column>
+			<column name="room_type" value="DELUXE_ROOM"></column>
+			<column name="room_occupancy" value="4"></column>
+			<column name="availability" value="true"></column>
+		</insert>
+		<insert tableName="inventory">
+			<column name="total_number_of_rooms" value="10"></column>
+			<column name="available_rooms" value="10"></column>
+			<column name="room_type" value="SUITE_ROOM"></column>
+			<column name="room_occupancy" value="6"></column>
+			<column name="availability" value="true"></column>
+		</insert>
+	</changeSet>
+</databaseChangeLog>
