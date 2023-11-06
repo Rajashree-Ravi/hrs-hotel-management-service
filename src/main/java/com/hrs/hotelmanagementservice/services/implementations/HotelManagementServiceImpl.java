@@ -64,9 +64,17 @@ public class HotelManagementServiceImpl implements HotelManagementService {
 	 * Create a new room
 	 */
 	@Override
-	public RoomDto createRoom(@Valid RoomDto roomDto) {
-		Room room = mapper.map(roomDto, Room.class);
-		return mapper.map(roomRepository.save(room), RoomDto.class);
+	public RoomDto createRoom(@Valid RoomDto roomDto, @Valid RoomType type) {
+		List<RoomInventory> inventories = getInventoryByRoomTypeAndAvailability(type, true);
+		if (inventories.size() > 0) {
+			roomDto.setInventoryId(inventories.get(0).getId());
+
+			Room room = mapper.map(roomDto, Room.class);
+			return mapper.map(roomRepository.save(room), RoomDto.class);
+
+		} else {
+			throw new InventoryNotFoundException("Inventory with room type: " + type + " not available");
+		}
 	}
 
 	/**

@@ -18,7 +18,7 @@ public interface HotelManagementService {
 
 	List<RoomDto> getRoomsByCustomerId(@Valid long customerId);
 
-	RoomDto createRoom(@Valid RoomDto room);
+	RoomDto createRoom(@Valid RoomDto room, @Valid RoomType type);
 
 	RoomDto updateRoom(@Valid long id, @Valid RoomDto room);
 
